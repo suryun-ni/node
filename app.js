@@ -13,7 +13,7 @@ db.mongoose
         useUnifiedTopology: true,
     })
     .then(() => {
-        console.log(`Database connected!`)
+        console.log(`Database connected sucessfull!`)
     }).catch((err) => {
         console.log(`Cannot Connect to database!`, err)
         process.exit()
@@ -24,6 +24,8 @@ app.get('/', (req, res) => {
         message:"Welcome to tengku express js"
     })
 })
+
+require('./app/routes/post.routes')(app)
 
 const PORT = 8000
 app.listen(PORT, () => {
