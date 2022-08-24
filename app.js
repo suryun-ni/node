@@ -12,7 +12,7 @@ db.mongoose
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
-    .then((result) => {
+    .then(() => {
         console.log(`Database connected!`)
     }).catch((err) => {
         console.log(`Cannot Connect to database!`, err)
