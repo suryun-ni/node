@@ -1,5 +1,5 @@
 module.exports = mongoose => {
-    const schema = mongoose.Schema({
+    var schema = mongoose.Schema({
         title: String,
         body: String,
         published: Boolean
@@ -12,6 +12,6 @@ module.exports = mongoose => {
         return object;
     });
 
-    const Post = mongoose.model("post", schema)
+    const Post = mongoose.model("posts", schema)
     return Post
 }

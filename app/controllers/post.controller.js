@@ -14,11 +14,15 @@ exports.findAll = (req, res) => {
 }
 
 exports.create = (req, res) => {
+    if (!req.body.title) {
+        res.status(400).send({ message: "Content can not be empty!" });
+        return;
+    }
     const post = new Post({
         title: req.body.title,
         body: req.body.body,
         published: req.body.published ? req.body.published : false
-    })
+    });
 
     post.save(post)
         .then((result) => {
